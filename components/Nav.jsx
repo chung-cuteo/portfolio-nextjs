@@ -20,10 +20,6 @@ const links = [
     name: "work",
     path: "/work",
   },
-  {
-    name: "contact",
-    path: "/contact",
-  },
 ];
 
 const Nav = () => {
@@ -36,8 +32,8 @@ const Nav = () => {
             href={link.path}
             key={index}
             className={`${
-              link.path === pathname && "text-accent border-b-2 border-accent"
-            } capitalize font-medium hover:text-accent transition-all`}
+              link.path === pathname && "text-pink-500 border-b-2 border-pink-500"
+            } capitalize font-medium hover:text-pink-500 transition-all`}
           >
             {link.name}
           </Link>

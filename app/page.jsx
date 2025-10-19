@@ -10,18 +10,16 @@ const Home = () => {
   return (
     <section className="h-full">
       <div className="container mx-auto h-full">
-        <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
-          {/* text */}
+        <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-20">
           <div className="text-center xl:text-left order-2 xl:order-none">
             <span className="text-xl">Web Developer</span>
             <h1 className="h1 mb-6 text-[65px]">
-              Hello I'm <br /> <span className="text-pink-500">DINH QUANG CHUNG</span>
+              Hello I'm <br />{" "}
+              <span className="text-pink-500">DINH QUANG CHUNG</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">
-              I excel at crafting elegant digital experiences and I am
-              proficient in various programming languages and technologies.
+              Web制作の分野で5年間の経験があり、HTML・CSS・JavaScriptを中心に、必要に応じてVueやReactを用いたSPA開発にも携わってきました。セマンティックなマークアップやレスポンシブデザインを意識し、ユーザーにとって見やすく使いやすいWebページ制作を心がけています。どうぞよろしくお願いいたします。
             </p>
-            {/* btn and socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
               <Button
                 variant="outline"
@@ -34,12 +32,11 @@ const Home = () => {
               <div className="mb-8 xl:mb-0">
                 <Social
                   containerStyles="flex gap-6"
-                  iconStyles="w-9 h-9 border border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary hover:transition-all duration-500"
+                  iconStyles="w-9 h-9 border border-pink-500 rounded-full flex justify-center items-center text-pink-500 text-base hover:bg-pink-500 hover:text-primary hover:transition-all duration-500"
                 />
               </div>
             </div>
           </div>
-          {/* photo */}
           <div className="order-1 xl:order-none mb-8 xl:mb-0">
             <Photo />
           </div>

@@ -8,7 +8,7 @@ import Stats from "@/components/Stats";
 
 const Home = () => {
   return (
-    <section className="h-full">
+    <main className="h-full py-7 xl:py-10">
       <div className="container mx-auto h-full">
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-20">
           <div className="text-center xl:text-left order-2 xl:order-none">
@@ -43,7 +43,7 @@ const Home = () => {
         </div>
       </div>
       <Stats />
-    </section>
+    </main>
   );
 };
 

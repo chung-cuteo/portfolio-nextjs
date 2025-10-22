@@ -20,7 +20,7 @@ const info = [
   {
     icon: <FaPhoneAlt />,
     title: "Phone",
-    description: "(+40) 321 654 876",
+    description: "070 4003 9831",
   },
   {
     icon: <FaEnvelope />,
@@ -30,7 +30,7 @@ const info = [
   {
     icon: <FaMapMarkerAlt />,
     title: "Address",
-    description: "Code Corner, Tech Town 13579",
+    description: "埼玉県川口市川口４−４−３４川口寿コーポ",
   },
 ];
 
@@ -39,17 +39,16 @@ import { motion } from "framer-motion";
 const Contact = () => {
   return (
     <main
-      className="py-6"
+      className="pb-7 xl:py-10"
     >
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row gap-[30px]">
           {/* form */}
           <div className="xl:w-[54%] order-2 xl:order-none">
             <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
-              <h3 className="text-4xl text-pink-500">Let's work together</h3>
+              <h3 className="text-4xl text-pink-500 text-center">お問い合わせ</h3>
               <p className="text-white/60">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum
-                nihil sapiente pariatur id totam.
+                ご質問やご依頼は、下記の連絡先までお気軽にご連絡ください。
               </p>
               {/* input */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -58,28 +57,14 @@ const Contact = () => {
                 <Input type="email" placeholder="Email address" />
                 <Input type="phone" placeholder="Phone number" />
               </div>
-              {/* select */}
-              <Select>
-                <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Select a service" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectLabel>Select a service</SelectLabel>
-                    <SelectItem value="est">Web Development</SelectItem>
-                    <SelectItem value="cst">UI/UX Design</SelectItem>
-                    <SelectItem value="mst">Logo Design</SelectItem>
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
               {/* textarea */}
               <Textarea
                 className="h-[200px]"
                 placeholder="Type your message here."
               />
               {/* btn */}
-              <Button size="md" className="max-w-40">
-                Send message
+              <Button size="md" className="max-w-40 m-auto">
+                送信
               </Button>
             </form>
           </div>

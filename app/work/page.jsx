@@ -25,9 +25,8 @@ const projects = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate magnam modi.",
     stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
-    image: "/assets/work/thumb1.png",
+    image: "/images/work/thumb1.png",
     live: "",
-    github: "",
   },
   {
     num: "02",
@@ -36,9 +35,8 @@ const projects = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate magnam modi.",
     stack: [{ name: "Next.js" }, { name: "Tailwind.css" }, { name: "Node.js" }],
-    image: "/assets/work/thumb2.png",
+    image: "/images/work/thumb2.png",
     live: "",
-    github: "",
   },
   {
     num: "03",
@@ -47,9 +45,8 @@ const projects = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate magnam modi.",
     stack: [{ name: "Next.js" }, { name: "Tailwind.css" }],
-    image: "/assets/work/thumb3.png",
+    image: "/images/work/thumb3.png",
     live: "",
-    github: "",
   },
 ];
 
@@ -65,24 +62,25 @@ const Work = () => {
 
   return (
     <main
-      className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
+      className="min-h-[80vh] flex flex-col justify-center py-7 xl:py-10"
     >
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row xl:gap-[30px]">
           <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
-            <div className="flex flex-col gap-[30px] h-[50%]">
+            <div className="flex flex-col h-[50%]">
               {/* outline num */}
               <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
                 {project.num}
               </div>
+              <span className="mt-1 text-white/60">{project.category}</span>
               {/* project category */}
-              <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-pink-500 transition-all duration-500 capitalize">
-                {project.category} project
+              <h2 className="text-[42px] mt-6 font-bold leading-none text-white group-hover:text-pink-500 transition-all duration-500 capitalize">
+                {project.title}
               </h2>
               {/* project description */}
-              <p className="text-white/60">{project.description}</p>
+              <p className="text-white/60 mt-6">{project.description}</p>
               {/* stack */}
-              <ul className="flex gap-4">
+              <ul className="flex gap-4 mt-6">
                 {project.stack.map((item, index) => {
                   return (
                     <li key={index} className="text-xl text-pink-500">
@@ -94,9 +92,9 @@ const Work = () => {
                 })}
               </ul>
               {/* border */}
-              <div className="border border-white/20"></div>
+              <div className="border border-white/20 mt-6"></div>
               {/* buttons */}
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 mt-6">
                 {/* live project button */}
                 <Link href={project.live}>
                   <TooltipProvider delayDuration={100}>
@@ -106,19 +104,6 @@ const Work = () => {
                       </TooltipTrigger>
                       <TooltipContent>
                         <p>Live project</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
-                {/* github project button */}
-                <Link href={project.github}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsGithub className="text-white text-3xl group-hover:text-pink-500" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Github repository</p>
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
@@ -155,7 +140,7 @@ const Work = () => {
               {/* slider buttons */}
               <WorkSliderBtns
                 containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
-                btnStyles="bg-pink-500 hover:bg-pink-500-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"
+                btnStyles="bg-pink-500 hover:bg-pink-500-hover text-white text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"
               />
             </Swiper>
           </div>

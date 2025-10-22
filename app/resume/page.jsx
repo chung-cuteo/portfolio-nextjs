@@ -4,130 +4,63 @@ import {
   FaHtml5,
   FaCss3,
   FaJs,
+  FaPhp,
   FaReact,
   FaFigma,
   FaNodeJs,
+  FaVuejs,
+  FaLaravel,
+  FaGulp,
+  FaSass,
+  FaGithub,
 } from "react-icons/fa";
 
-import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
+import { SiTailwindcss, SiNextdotjs, SiNuxtdotjs, SiJquery, SiVuetify, SiWebpack, SiAdobexd, SiAdobephotoshop } from "react-icons/si";
 
-// about data
-const about = {
-  title: "About me",
-  description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
-  info: [
-    {
-      fieldName: "Name",
-      fieldValue: "Luke Coleman",
-    },
-    {
-      fieldName: "Phone",
-      fieldValue: "(+40) 321 654 678",
-    },
-    {
-      fieldName: "Experience",
-      fieldValue: "12+ Years",
-    },
-    {
-      fieldName: "Skype",
-      fieldValue: "luke.01",
-    },
-    {
-      fieldName: "Nationality",
-      fieldValue: "American",
-    },
-    {
-      fieldName: "Email",
-      fieldValue: "luke.01@gmail.com",
-    },
-    {
-      fieldName: "Freelance",
-      fieldValue: "Available",
-    },
-    {
-      fieldName: "Languages",
-      fieldValue: "English, Spanish",
-    },
-  ],
-};
 
 // experience data
 const experience = {
-  icon: "/assets/resume/badge.svg",
+  icon: "/images/resume/badge.svg",
   title: "My experience",
-  description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+  description: `4年間でフロントエンドエンジニアとして、コーポレートサイトやWebアプリの開発を担当しました。
+HTML・CSS・JavaScriptを中心に、VueやReactを用いたSPA開発、API連携、レスポンシブデザインの実装などを行いました。
+デザイナーと協力しながら、ユーザー目線を意識した高品質なUI/UXの構築に取り組みました。また1年間で
+マシニングセンターを使用した金属部品の製造・加工に携わっています。製造現場での正確さ、チームワーク、責任感を学び、これらを今後の開発業務にも活かしていきたいと考えています。`,
   items: [
     {
-      company: "Tech Solutions Inc.",
-      position: "Full Stack Developer",
-      duration: "2022 - Present",
+      company: "有限会社浜製作所",
+      position: "フロントエンドエンジニア",
+      duration: "2024 - 現在",
     },
     {
-      company: "Web Design Studio",
-      position: "Front-End Developer Intern",
-      duration: "Summer 2021",
-    },
-    {
-      company: "E-commerce Startup",
-      position: "Freelance Web Developer",
-      duration: "2020 - 2021",
-    },
-    {
-      company: "Tech Academy",
-      position: "Teaching Assistant",
-      duration: "2019 - 2020",
-    },
-    {
-      company: "Digital Agency",
-      position: "UI/UX Designer",
-      duration: "2018 - 2019",
-    },
-    {
-      company: "Software Development Firm",
-      position: "Junior Developer",
-      duration: "2017 - 2018",
+      company: "株式会社カイエン",
+      position: "マシニングセンターエンジニア",
+      duration: "2020 - 2024",
     },
   ],
 };
 
 // education data
 const education = {
-  icon: "/assets/resume/cap.svg",
+  icon: "/images/resume/cap.svg",
   title: "My education",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+    "大学では生物学を専攻し、論理的思考力や問題解決力を養いました。その後、日本語学校とIT専門学校で学び、日本語能力とプログラミングの基礎を身につけました。専門学校ではHTML、CSS、JavaScriptを中心に、Web開発の実践的なスキルを学び、現在のWebエンジニアとしての基盤を築きました。",
   items: [
     {
-      institution: "Online Course Platform",
-      degree: "Full Stack Web Development Bootcamp",
-      duration: "2023",
+      institution: "HUNG VUONG 大学",
+      degree: "理学部 生物学科",
+      duration: "2011年8月〜2015年3月",
     },
     {
-      institution: "Codecademy",
-      degree: "Front-end Track",
-      duration: "2022",
+      institution: "アンランゲージスクール日本語学校",
+      degree: "日本語",
+      duration: "2016年3月〜2018年3月",
     },
     {
-      institution: "Online Course",
-      degree: "Programming Course",
-      duration: "2020 - 2021",
-    },
-    {
-      institution: "Tech Institute",
-      degree: "Certified Web Developer",
-      duration: "2019",
-    },
-    {
-      institution: "Design School",
-      degree: "Diploma in Graphic Design",
-      duration: "2016 - 2018",
-    },
-    {
-      institution: "Community College",
-      degree: "Associate Degree in Computer Science",
-      duration: "2014 - 2016",
+      institution: "駿台電子情報＆ビジネス専門学校",
+      degree: "ITエキスパート科",
+      duration: "2018年4月〜2020年3月",
     },
   ],
 };
@@ -136,39 +69,125 @@ const education = {
 const skills = {
   title: "My skills",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+    "主にHTML, CSS, JavaScript, Vue.js, Nuxt.js, React.js, Next.jsを用いたフロントエンド開発を行っており、モダンなWebアプリケーション構築を得意としています。また、プロジェクトによってPHPやLaravelにも携わった経験があります。",
   skillList: [
     {
       icon: <FaHtml5 />,
-      name: "html 5",
+      name: "HTML 5",
     },
     {
       icon: <FaCss3 />,
-      name: "css 3",
+      name: "CSS 3",
     },
     {
       icon: <FaJs />,
-      name: "javascript",
+      name: "Javascript",
     },
     {
       icon: <FaReact />,
-      name: "react.js",
+      name: "React.js",
     },
     {
       icon: <SiNextdotjs />,
-      name: "next.js",
+      name: "Next.js",
     },
     {
-      icon: <SiTailwindcss />,
-      name: "tailwind.css",
+      icon: <FaVuejs />,
+      name: "Vue.js",
+    },
+    {
+      icon: <SiNuxtdotjs />,
+      name: "Nuxt.js",
     },
     {
       icon: <FaNodeJs />,
-      name: "node.js",
+      name: "Node.js",
+    },
+    {
+      icon: <FaPhp />,
+      name: "PHP",
+    },
+    {
+      icon: <FaLaravel />,
+      name: "Laravel",
+    },
+     {
+      icon: <SiJquery />,
+      name: "jQuery",
+    },
+       {
+      icon: <SiWebpack />,
+      name: "Webpack",
+    },
+         {
+      icon: <FaGulp />,
+      name: "Gulp",
+    },
+        {
+      icon: <FaSass />,
+      name: "SASS",
+    },
+    {
+      icon: <SiTailwindcss />,
+      name: "Tailwind",
+    },
+      {
+      icon: <SiVuetify />,
+      name: "Vuetify",
+    },
+    {
+      icon: <FaGithub />,
+      name: "Git",
     },
     {
       icon: <FaFigma />,
-      name: "figma",
+      name: "Figma",
+    },
+     {
+      icon: <SiAdobexd />,
+      name: "XD",
+    },
+     {
+      icon: <SiAdobephotoshop />,
+      name: "Photoshop",
+    },
+  ],
+};
+
+// about data
+const about = {
+  title: "About me",
+  description:
+    "私はベトナム出身で、現在は埼玉県川口市に在住しています。フロントエンドを中心にWebサイトやWebアプリケーション開発者です。趣味はゲームで、楽しみながら新しいアイデアやクリエイティブな発想を日々の開発に活かしています。",
+  info: [
+    {
+      fieldName: "名前",
+      fieldValue: "Dinh Quang Chung",
+    },
+    {
+      fieldName: "電話",
+      fieldValue: "070 4003 9831",
+    },
+    {
+      fieldName: "実務年数",
+      fieldValue: "5年以上",
+    },
+      {
+      fieldName: "Email",
+      fieldValue: "dinhquangchung.k9sh@gmail.com",
+    },
+   
+    {
+      fieldName: "国籍",
+      fieldValue: "ベトナム",
+    },
+        {
+      fieldName: "趣味",
+      fieldValue: "ゲーム",
+    },
+    {
+      fieldName: "言語",
+      fieldValue: "ベトナム語, 日本語",
     },
   ],
 };
@@ -186,9 +205,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 const Resume = () => {
   return (
-    <main
-      className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0"
-    >
+    <main className="min-h-[80vh] flex items-center justify-center py-7 xl:py-10">
       <div className="container mx-auto">
         <Tabs
           defaultValue="experience"
@@ -216,7 +233,7 @@ const Resume = () => {
                       return (
                         <li
                           key={index}
-                          className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                          className="bg-[#232329] py-4 px-10 rounded-xl flex flex-col justify-start items-start gap-1"
                         >
                           <span className="text-pink-500">{item.duration}</span>
                           <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
@@ -248,7 +265,7 @@ const Resume = () => {
                       return (
                         <li
                           key={index}
-                          className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                          className="bg-[#232329] py-4 px-10 rounded-xl flex flex-col justify-start items-start gap-1"
                         >
                           <span className="text-pink-500">{item.duration}</span>
                           <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
@@ -282,7 +299,7 @@ const Resume = () => {
                       <li key={index}>
                         <TooltipProvider delayDuration={100}>
                           <Tooltip>
-                            <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
+                            <TooltipTrigger className="w-full h-[130px] bg-[#232329] rounded-xl flex justify-center items-center group">
                               <div className="text-6xl group-hover:text-pink-500 transition-all duration-300">
                                 {skill.icon}
                               </div>

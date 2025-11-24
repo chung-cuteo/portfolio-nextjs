@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   darkMode: ["class"],
   content: [
@@ -11,7 +13,7 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: "15px",
+      padding: "25px",
     },
     screens: {
       sm: "640px",
@@ -19,33 +21,16 @@ module.exports = {
       lg: "960px",
       xl: "1200px",
     },
+    colors: {
+      primary: colors.pink[500],
+      white: colors.white,
+      black: colors.black,
+    },
+
     fontFamily: {
       primary: "var(--font-jetbrainsMono)",
     },
-    extend: {
-      colors: {
-        primary: "#1c1c22",
-        accent: {
-          DEFAULT: "#00ff99",
-          hover: "#00e187",
-        },
-      },
-
-      keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
-        },
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-      },
-    },
+    extend: {},
   },
   plugins: [require("tailwindcss-animate")],
 };

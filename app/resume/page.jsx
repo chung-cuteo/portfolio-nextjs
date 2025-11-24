@@ -14,11 +14,27 @@ import {
   FaSass,
   FaGithub,
 } from "react-icons/fa";
+import {
+  SiTailwindcss,
+  SiNextdotjs,
+  SiNuxtdotjs,
+  SiJquery,
+  SiVuetify,
+  SiWebpack,
+  SiAdobexd,
+  SiAdobephotoshop,
+} from "react-icons/si";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import Hero from "@/components/Hero";
+import MainContent from "@/components/MainContent";
 
-import { SiTailwindcss, SiNextdotjs, SiNuxtdotjs, SiJquery, SiVuetify, SiWebpack, SiAdobexd, SiAdobephotoshop } from "react-icons/si";
-
-
-// experience data
 const experience = {
   icon: "/images/resume/badge.svg",
   title: "My experience",
@@ -111,19 +127,19 @@ const skills = {
       icon: <FaLaravel />,
       name: "Laravel",
     },
-     {
+    {
       icon: <SiJquery />,
       name: "jQuery",
     },
-       {
+    {
       icon: <SiWebpack />,
       name: "Webpack",
     },
-         {
+    {
       icon: <FaGulp />,
       name: "Gulp",
     },
-        {
+    {
       icon: <FaSass />,
       name: "SASS",
     },
@@ -131,7 +147,7 @@ const skills = {
       icon: <SiTailwindcss />,
       name: "Tailwind",
     },
-      {
+    {
       icon: <SiVuetify />,
       name: "Vuetify",
     },
@@ -143,11 +159,11 @@ const skills = {
       icon: <FaFigma />,
       name: "Figma",
     },
-     {
+    {
       icon: <SiAdobexd />,
       name: "XD",
     },
-     {
+    {
       icon: <SiAdobephotoshop />,
       name: "Photoshop",
     },
@@ -172,16 +188,16 @@ const about = {
       fieldName: "実務年数",
       fieldValue: "5年以上",
     },
-      {
+    {
       fieldName: "Email",
       fieldValue: "dinhquangchung.k9sh@gmail.com",
     },
-   
+
     {
       fieldName: "国籍",
       fieldValue: "ベトナム",
     },
-        {
+    {
       fieldName: "趣味",
       fieldValue: "ゲーム",
     },
@@ -192,21 +208,11 @@ const about = {
   ],
 };
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-
-import { ScrollArea } from "@/components/ui/scroll-area";
-
 const Resume = () => {
   return (
-    <main className="min-h-[80vh] flex items-center justify-center py-7 xl:py-10">
-      <div className="container mx-auto">
+    <>
+      <Hero src="/images/resume/hero.png" />
+      <MainContent>
         <Tabs
           defaultValue="experience"
           className="flex flex-col xl:flex-row gap-[60px]"
@@ -224,7 +230,7 @@ const Resume = () => {
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{experience.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                <p className="max-w-[600px]  mx-auto xl:mx-0">
                   {experience.description}
                 </p>
                 <ScrollArea className="h-[400px]">
@@ -233,16 +239,16 @@ const Resume = () => {
                       return (
                         <li
                           key={index}
-                          className="bg-[#232329] py-4 px-10 rounded-xl flex flex-col justify-start items-start gap-1"
+                          className="bg-[#e30a9112] py-4 px-10 rounded-xl flex flex-col justify-start items-start gap-1"
                         >
-                          <span className="text-pink-500">{item.duration}</span>
+                          <span className="text-primary">{item.duration}</span>
                           <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
                             {item.position}
                           </h3>
                           <div className="flex items-center gap-3">
                             {/* dot */}
-                            <span className="w-[6px] h-[6px] rounded-full bg-pink-500"></span>
-                            <p className="text-white/60">{item.company}</p>
+                            <span className="w-[6px] h-[6px] rounded-full bg-primary"></span>
+                            <p className="">{item.company}</p>
                           </div>
                         </li>
                       );
@@ -256,7 +262,7 @@ const Resume = () => {
             <TabsContent value="education" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{education.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                <p className="max-w-[600px]  mx-auto xl:mx-0">
                   {education.description}
                 </p>
                 <ScrollArea className="h-[400px]">
@@ -265,16 +271,15 @@ const Resume = () => {
                       return (
                         <li
                           key={index}
-                          className="bg-[#232329] py-4 px-10 rounded-xl flex flex-col justify-start items-start gap-1"
+                          className="bg-[#e30a9112] py-4 px-10 rounded-xl flex flex-col justify-start items-start gap-1"
                         >
-                          <span className="text-pink-500">{item.duration}</span>
+                          <span className="text-primary">{item.duration}</span>
                           <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
                             {item.degree}
                           </h3>
                           <div className="flex items-center gap-3">
-                            {/* dot */}
-                            <span className="w-[6px] h-[6px] rounded-full bg-pink-500"></span>
-                            <p className="text-white/60">{item.institution}</p>
+                            <span className="w-[6px] h-[6px] rounded-full bg-primary"></span>
+                            <p className="">{item.institution}</p>
                           </div>
                         </li>
                       );
@@ -299,8 +304,8 @@ const Resume = () => {
                       <li key={index}>
                         <TooltipProvider delayDuration={100}>
                           <Tooltip>
-                            <TooltipTrigger className="w-full h-[130px] bg-[#232329] rounded-xl flex justify-center items-center group">
-                              <div className="text-6xl group-hover:text-pink-500 transition-all duration-300">
+                            <TooltipTrigger className="w-full h-[130px] bg-black rounded-xl flex justify-center items-center group">
+                              <div className="text-6xl group-hover:text-primary transition-all duration-300">
                                 {skill.icon}
                               </div>
                             </TooltipTrigger>
@@ -343,8 +348,8 @@ const Resume = () => {
             </TabsContent>
           </div>
         </Tabs>
-      </div>
-    </main>
+      </MainContent>
+    </>
   );
 };
 

@@ -3,6 +3,7 @@ import "./globals.css";
 
 // components
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -18,9 +19,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={jetbrainsMono.variable}>
+      <body className={`${jetbrainsMono.variable} bg-light text-black dark:text-white dark:bg-dark text-lg xl:text-xl`}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

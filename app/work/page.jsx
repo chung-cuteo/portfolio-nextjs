@@ -1,26 +1,19 @@
 "use client";
 import React, { useState } from "react";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-
-import { BsArrowUpRight, BsGithub } from "react-icons/bs";
-
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
 
 import Link from "next/link";
 import Image from "next/image";
 import WorkSliderBtns from "@/components/WorkSliderBtns";
+import Hero from "@/components/Hero";
+import MainContent from "@/components/MainContent";
+import { Button } from "@/components/ui/button";
 
 const projects = [
   {
     num: "01",
-    category: "frontend",
+    category: "Frontend",
     title: "project 1",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate magnam modi.",
@@ -30,7 +23,7 @@ const projects = [
   },
   {
     num: "02",
-    category: "fullstack",
+    category: "Fullstack",
     title: "project 2",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate magnam modi.",
@@ -40,7 +33,7 @@ const projects = [
   },
   {
     num: "03",
-    category: "frontend",
+    category: "Frontend",
     title: "project 3",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate magnam modi.",
@@ -54,59 +47,40 @@ const Work = () => {
   const [project, setProject] = useState(projects[0]);
 
   const handleSlideChange = (swiper) => {
-    // get current slide index
     const currentIndex = swiper.activeIndex;
-    // update project state based on current slide index
     setProject(projects[currentIndex]);
   };
 
   return (
-    <main
-      className="min-h-[80vh] flex flex-col justify-center py-7 xl:py-10"
-    >
-      <div className="container mx-auto">
+    <>
+     <Hero
+        src="/images/work/hero.png"
+      />
+    <MainContent>
         <div className="flex flex-col xl:flex-row xl:gap-[30px]">
           <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
             <div className="flex flex-col h-[50%]">
-              {/* outline num */}
               <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
                 {project.num}
               </div>
-              <span className="mt-1 text-white/60">{project.category}</span>
-              {/* project category */}
-              <h2 className="text-[42px] mt-6 font-bold leading-none text-white group-hover:text-pink-500 transition-all duration-500 capitalize">
+              <span className="mt-1">{project.category}</span>
+              <h2 className="text-[42px] mt-6 font-bold leading-none capitalize">
                 {project.title}
               </h2>
-              {/* project description */}
-              <p className="text-white/60 mt-6">{project.description}</p>
-              {/* stack */}
+              <p className="mt-6">{project.description}</p>
               <ul className="flex gap-4 mt-6">
                 {project.stack.map((item, index) => {
                   return (
-                    <li key={index} className="text-xl text-pink-500">
+                    <li key={index} className="text-xl text-primary">
                       {item.name}
-                      {/* remove the last comma */}
                       {index !== project.stack.length - 1 && ","}
                     </li>
                   );
                 })}
               </ul>
-              {/* border */}
-              <div className="border border-white/20 mt-6"></div>
-              {/* buttons */}
-              <div className="flex items-center gap-4 mt-6">
-                {/* live project button */}
+              <div className="flex items-center gap-4 mt-8">
                 <Link href={project.live}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsArrowUpRight className="text-white text-3xl group-hover:text-pink-500" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Live project</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
+                  <Button asChild variant="outline"><span>Go to Project</span></Button>
                 </Link>
               </div>
             </div>
@@ -122,9 +96,7 @@ const Work = () => {
                 return (
                   <SwiperSlide key={index} className="w-full">
                     <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
-                      {/* overlay */}
                       <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
-                      {/* image */}
                       <div className="relative w-full h-full">
                         <Image
                           src={project.image}
@@ -137,16 +109,15 @@ const Work = () => {
                   </SwiperSlide>
                 );
               })}
-              {/* slider buttons */}
               <WorkSliderBtns
                 containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
-                btnStyles="bg-pink-500 hover:bg-pink-500-hover text-white text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"
+                btnStyles="bg-primary hover:bg-primary-hover text-white text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"
               />
             </Swiper>
           </div>
         </div>
-      </div>
-    </main>
+      </MainContent>
+    </>
   );
 };
 

@@ -1,52 +1,116 @@
 "use client";
 
-import { BsArrowDownRight } from "react-icons/bs";
-import Link from "next/link";
+import Hero from "@/components/Hero";
+import MainContent from "@/components/MainContent";
 
-const services = [
+import {
+  HiOutlineViewBoards,
+  HiOutlineCode,
+  HiOutlineCheckCircle,
+  HiOutlineChartBar,
+  HiOutlineUsers,
+  HiOutlineDatabase,
+  HiOutlineServer,
+} from "react-icons/hi";
+import {
+  HiCpuChip,
+  HiOutlineDevicePhoneMobile,
+  HiOutlineSquares2X2,
+  HiOutlineBolt,
+} from "react-icons/hi2";
+import { SiRedux } from "react-icons/si";
+
+const webSiteServices = [
   {
-    num: "01",
-    title: "ウェブサイト開発",
-    description:"デザイナーと協力し、HTML、CSS、JavaScript、jQueryを用いてコンポーネントやレイアウト、ページの開発を行い。レスポンシブデザインを活用して、多様なデバイスに対応したUIを実装。また、アクセシビリティの実装にも注力し、ブラウザテストとデバッグを通じて高品質なコードを提供。お客様からのフィードバックやトラブルにも対応し、納品までを担当。",
+    icon: <HiOutlineCode className="w-8 h-6 text-primary mt-1" />,
+    text: "デザイナーと協働でHTML/CSS/JavaScript/jQueryによるページ・コンポーネント実装",
   },
   {
-    num: "02",
-    title: "ウェブアプリケーション開発",
-    description:"デザイナーと協力し、Vue、React、TypeScriptを用いてコンポーネントの開発や状態管理を設計。APIとのデータ連携、UI/UXの実装、テスト、パフォーマンス最適化も担当。LaravelやNode.jsを使用したAPI開発。",
+    icon: (
+      <HiOutlineDevicePhoneMobile className="w-5 h-5 text-primary mt-1" />
+    ),
+    text: "レスポンシブデザインでマルチデバイス対応",
+  },
+  {
+    icon: <HiOutlineCheckCircle className="w-5 h-5 text-primary mt-1" />,
+    text: "アクセシビリティ改善を含むUI実装",
+  },
+  {
+    icon: <HiOutlineChartBar className="w-5 h-5 text-primary mt-1" />,
+    text: "ブラウザテスト・デバッグによる品質向上",
+  },
+  {
+    icon: <HiOutlineUsers className="w-5 h-5 text-primary mt-1" />,
+    text: "クライアントフィードバック対応、納品まで担当",
   },
 ];
 
+const webAppServices = [
+  {
+    icon: <HiOutlineSquares2X2 className="w-5 h-5 text-primary mt-1" />,
+    text: "Vue-Nuxt/React-Next/TypeScriptによるコンポーネント開発",
+  },
+  {
+    icon: <SiRedux className="w-5 h-5 text-primary mt-1" />,
+    text: "状態管理（Vuex/Pinia/Redux）を用いた設計",
+  },
+  {
+    icon: <HiOutlineDatabase className="w-5 h-5 text-primary mt-1" />,
+    text: "APIとの非同期データ連携",
+  },
+  {
+    icon: <HiOutlineBolt className="w-5 h-5 text-primary mt-1" />,
+    text: "UI/UX改善・パフォーマンス最適化",
+  },
+  {
+    icon: <HiOutlineServer className="w-5 h-5 text-primary mt-1" />,
+    text: "Laravel/Node.jsによる簡易API作成",
+  },
+];
 
 const Services = () => {
   return (
-    <section className="min-h-[80vh] flex flex-col justify-center py-7 xl:py-10">
-      <div className="container mx-auto">
-        <main
-          className="grid grid-cols-1 md:grid-cols-2 gap-[60px]"
-        >
-          {services.map((service, index) => {
-            return (
-              <div
-                key={index}
-                className="flex-1 flex flex-col justify-center gap-6 group"
-              >
-                <div className="w-full flex justify-between items-center">
-                  <div className="text-5xl font-extrabold text-outline text-transparent group-hover:text-pink-500 transition-all duration-500">
-                    {service.num}
-                  </div>
-                
-                </div>
-                <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-pink-500 transition-all duration-500">
-                  {service.title}
-                </h2>
-                <p className="text-white/60">{service.description}</p>
-                <div className="mt-auto border-b border-white/20 w-full"></div>
-              </div>
-            );
-          })}
-        </main>
-      </div>
-    </section>
+    <>
+      <Hero src="/images/services/hero.png" />
+      <MainContent>
+        <p className="text-center pb-[30px]">
+          Web開発エンジニアとして、フロントエンドからSPAまで幅広い開発経験を有し、ユーザー視点のUI/UX改善やパフォーマンス最適化を意識した実装が可能です。デザイナーやバックエンドチームと協働しながら、高品質なWebサイト・アプリケーションを提供してきました。
+        </p>
+        <div className="flex flex-col xl:flex-row p-8 gap-8">
+          <div className="xl:max-w-[550px]">
+            <div className="flex items-center gap-3 mb-4">
+              <HiOutlineViewBoards className="w-7 h-7 text-primary" />
+              <h2 className="text-[25px] font-semibold">Webサイト開発</h2>
+            </div>
+            <ul className="bg-[#e30a9112] rounded-xl p-10">
+               {webSiteServices.map(({icon,text}, i) => (
+                <li key={i} className="flex items-start gap-2">
+                  {icon}
+                  {text}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="xl:max-w-[550px]">
+            <div className="flex items-center gap-3 mb-4">
+              <HiCpuChip className="w-7 h-7 text-primary" />
+              <h2 className="text-[25px] font-semibold">
+                Webアプリケーション開発
+              </h2>
+            </div>
+            <ul className="bg-[#e30a9112] rounded-xl p-10">
+              {webAppServices.map(({icon,text}, i) => (
+                <li key={i} className="flex items-start gap-2">
+                  {icon}
+                  {text}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </MainContent>
+    </>
   );
 };
 

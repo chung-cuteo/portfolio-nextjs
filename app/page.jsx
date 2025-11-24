@@ -1,25 +1,39 @@
 import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
-
-// components
+import Hero from "@/components/Hero";
+import MainContent from "@/components/MainContent";
 import Social from "@/components/Social";
 import Photo from "@/components/Photo";
 import Stats from "@/components/Stats";
 
 const Home = () => {
   return (
-    <main className="h-full py-7 xl:py-10">
-      <div className="container mx-auto h-full">
-        <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-20">
+    <>
+      <Hero
+        src="/images/hero.png"
+      />
+    <MainContent>
+        <div className="flex flex-col xl:flex-row items-center justify-between">
           <div className="text-center xl:text-left order-2 xl:order-none">
-            <span className="text-xl">Web Developer</span>
-            <h1 className="h1 mb-6 text-[65px]">
-              Hello I'm <br />{" "}
-              <span className="text-pink-500">DINH QUANG CHUNG</span>
+            <span className="text-xl">Frontend Developer</span>
+            <p className="text-[40px] xl:text-[50px] my-4">Hello I'm </p>
+            <h1 className="h1 mb-6 text-[50px] xl:text-[65px]">
+              <span className="text-primary">Dinh Quang Chung</span>
             </h1>
-            <p className="max-w-[500px] mb-9 text-white/80">
-              Web制作の分野で5年間の経験があり、HTML・CSS・JavaScriptを中心に、必要に応じてVueやReactを用いたSPA開発にも携わってきました。セマンティックなマークアップやレスポンシブデザインを意識し、ユーザーにとって見やすく使いやすいWebページ制作を心がけています。どうぞよろしくお願いいたします。
-            </p>
+            <div className="max-w-[500px] mb-9 mx-auto xl:mx-0">
+              <p>
+                Web 制作に携わって4年以上、主に HTML・CSS・JavaScript
+                を中心としたフロントエンド開発を行ってきました。Vue.js や React
+                を使った SPA の実装にも取り組み、見やすく使いやすい UI/UX
+                と、セマンティックで保守しやすいコードを意識しています。
+              </p>
+              <p className="mt-6">
+                また、必要に応じて Node.js や PHP / Laravel を用いた簡単な API
+                開発やサーバーサイドの補助作業も担当した経験があります。フロントエンドを軸にしつつ、バックエンドとの連携も理解した上で、より良い
+                Web 体験を作ることを目指しています。
+              </p>
+            </div>
+
             <div className="flex flex-col xl:flex-row items-center gap-8">
               <Button
                 variant="outline"
@@ -32,7 +46,7 @@ const Home = () => {
               <div className="mb-8 xl:mb-0">
                 <Social
                   containerStyles="flex gap-6"
-                  iconStyles="w-9 h-9 border border-pink-500 rounded-full flex justify-center items-center text-pink-500 text-base hover:bg-pink-500 hover:text-primary hover:transition-all duration-500"
+                  iconStyles="w-9 h-9 border border-primary rounded-full flex justify-center items-center text-primary text-base hover:bg-primary hover:text-white hover:transition-all duration-500"
                 />
               </div>
             </div>
@@ -41,9 +55,9 @@ const Home = () => {
             <Photo />
           </div>
         </div>
-      </div>
       <Stats />
-    </main>
+    </MainContent>
+    </>
   );
 };
 

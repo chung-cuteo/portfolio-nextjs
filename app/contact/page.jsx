@@ -1,18 +1,10 @@
 "use client";
 
+import Hero from "@/components/Hero";
+import MainContent from "@/components/MainContent";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
@@ -34,26 +26,25 @@ const info = [
   },
 ];
 
-import { motion } from "framer-motion";
-
 const Contact = () => {
   return (
-    <main
-      className="pb-7 xl:py-10"
-    >
-      <div className="container mx-auto">
+    <>
+      <Hero src="/images/contact/hero.png" alt="frontend developer" />
+      <MainContent>
         <div className="flex flex-col xl:flex-row gap-[30px]">
           {/* form */}
           <div className="xl:w-[54%] order-2 xl:order-none">
-            <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
-              <h3 className="text-4xl text-pink-500 text-center">お問い合わせ</h3>
-              <p className="text-white/60">
+            <form className="flex flex-col gap-6 p-10 bg-[#e30a9112] rounded-xl">
+              <h3 className="text-4xl text-primary text-center">
+                お問い合わせ
+              </h3>
+              <p>
                 ご質問やご依頼は、下記の連絡先までお気軽にご連絡ください。
               </p>
               {/* input */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input type="firstname" placeholder="Firstname" />
-                <Input type="lastname" placeholder="Lastname" />
+                <Input type="first-name" placeholder="First name" />
+                <Input type="last-name" placeholder="Last name" />
                 <Input type="email" placeholder="Email address" />
                 <Input type="phone" placeholder="Phone number" />
               </div>
@@ -74,11 +65,11 @@ const Contact = () => {
               {info.map((item, index) => {
                 return (
                   <li key={index} className="flex items-center gap-6">
-                    <div className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-[#27272c] text-pink-500 rounded-md flex items-center justify-center">
+                    <div className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-[#e30a9112] text-primary rounded-md flex items-center justify-center">
                       <div className="text-[28px]">{item.icon}</div>
                     </div>
                     <div className="flex-1">
-                      <p className="text-white/60">{item.title}</p>
+                      <p>{item.title}</p>
                       <h3 className="text-xl">{item.description}</h3>
                     </div>
                   </li>
@@ -87,8 +78,8 @@ const Contact = () => {
             </ul>
           </div>
         </div>
-      </div>
-    </main>
+      </MainContent>
+    </>
   );
 };
 

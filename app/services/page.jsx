@@ -2,6 +2,7 @@
 
 import Hero from "@/components/Hero";
 import MainContent from "@/components/MainContent";
+import Heading from "@/components/Heading";
 
 import {
   HiOutlineViewBoards,
@@ -26,9 +27,7 @@ const webSiteServices = [
     text: "デザイナーと協働でHTML/CSS/JavaScript/jQueryによるページ・コンポーネント実装",
   },
   {
-    icon: (
-      <HiOutlineDevicePhoneMobile className="w-5 h-5 text-primary mt-1" />
-    ),
+    icon: <HiOutlineDevicePhoneMobile className="w-5 h-5 text-primary mt-1" />,
     text: "レスポンシブデザインでマルチデバイス対応",
   },
   {
@@ -73,6 +72,7 @@ const Services = () => {
     <>
       <Hero src="/images/services/hero.png" />
       <MainContent>
+        <Heading text="Services" className="text-center"/>
         <p className="text-center pb-[30px]">
           Web開発エンジニアとして、フロントエンドからSPAまで幅広い開発経験を有し、ユーザー視点のUI/UX改善やパフォーマンス最適化を意識した実装が可能です。デザイナーやバックエンドチームと協働しながら、高品質なWebサイト・アプリケーションを提供してきました。
         </p>
@@ -80,10 +80,10 @@ const Services = () => {
           <div className="xl:max-w-[550px]">
             <div className="flex items-center gap-3 mb-4">
               <HiOutlineViewBoards className="w-7 h-7 text-primary" />
-              <h2 className="text-[25px] font-semibold">Webサイト開発</h2>
+              <h2>Webサイト開発</h2>
             </div>
             <ul className="bg-[#e30a9112] rounded-xl p-10">
-               {webSiteServices.map(({icon,text}, i) => (
+              {webSiteServices.map(({ icon, text }, i) => (
                 <li key={i} className="flex items-start gap-2">
                   {icon}
                   {text}
@@ -95,12 +95,12 @@ const Services = () => {
           <div className="xl:max-w-[550px]">
             <div className="flex items-center gap-3 mb-4">
               <HiCpuChip className="w-7 h-7 text-primary" />
-              <h2 className="text-[25px] font-semibold">
+              <h2>
                 Webアプリケーション開発
               </h2>
             </div>
             <ul className="bg-[#e30a9112] rounded-xl p-10">
-              {webAppServices.map(({icon,text}, i) => (
+              {webAppServices.map(({ icon, text }, i) => (
                 <li key={i} className="flex items-start gap-2">
                   {icon}
                   {text}

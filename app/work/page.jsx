@@ -9,6 +9,7 @@ import WorkSliderBtns from "@/components/WorkSliderBtns";
 import Hero from "@/components/Hero";
 import MainContent from "@/components/MainContent";
 import { Button } from "@/components/ui/button";
+import Heading from "@/components/Heading";
 
 const projects = [
   {
@@ -57,6 +58,7 @@ const Work = () => {
         src="/images/work/hero.png"
       />
     <MainContent>
+        <Heading text="Works" className="text-center"/>
         <div className="flex flex-col xl:flex-row xl:gap-[30px]">
           <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
             <div className="flex flex-col h-[50%]">

@@ -5,21 +5,21 @@ import MainContent from "@/components/MainContent";
 import Social from "@/components/Social";
 import Photo from "@/components/Photo";
 import Stats from "@/components/Stats";
+import Heading from "@/components/Heading";
 
 const Home = () => {
   return (
     <>
-      <Hero
-        src="/images/hero.png"
-      />
-    <MainContent>
+      <Hero src="/images/hero.png" />
+      <MainContent>
         <div className="flex flex-col xl:flex-row items-center justify-between">
-          <div className="text-center xl:text-left order-2 xl:order-none">
+          <div className="text-center flex flex-col xl:text-left  xl:items-start items-center order-2 xl:order-none">
             <span className="text-xl">Frontend Developer</span>
-            <p className="text-[40px] xl:text-[50px] my-4">Hello I'm </p>
-            <h1 className="h1 mb-6 text-[50px] xl:text-[65px]">
-              <span className="text-primary">Dinh Quang Chung</span>
-            </h1>
+            <p className="text-[30px] xl:text-[50px] my-4">Hello I'm </p>
+            <Heading
+              text="Dinh Quang Chung"
+              className="relative w-[max-content] before:absolute before:inset-0 before:animate-typewriter before:bg-white after:absolute after:inset-0 after:w-[0.125em] after:animate-caret after:bg-primary"
+            />
             <div className="max-w-[500px] mb-9 mx-auto xl:mx-0">
               <p>
                 Web 制作に携わって4年以上、主に HTML・CSS・JavaScript
@@ -55,8 +55,8 @@ const Home = () => {
             <Photo />
           </div>
         </div>
-      <Stats />
-    </MainContent>
+        <Stats />
+      </MainContent>
     </>
   );
 };

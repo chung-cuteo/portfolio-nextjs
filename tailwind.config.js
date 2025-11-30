@@ -22,23 +22,30 @@ module.exports = {
       lg: "960px",
       xl: "1200px",
     },
-    colors: {
-      primary: "#d31ef7",
-      white: "white",
-      black: "#334155",
-    },
-
     fontFamily: {
       primary: "var(--font-jetbrainsMono)",
     },
     extend: {
+      backgroundImage: {
+        "primary-gradient": "linear-gradient(to right, #B0DB00, #2F9454)",
+        "transparent-gradient": "linear-gradient(to right, transparent, transparent)",
+      },
+      colors: {
+        primary: "#2F9454",
+        white: "white",
+        black: "#334155",
+      },
       animation: {
         typewriter: "typewriter 2s steps(11) forwards",
         caret:
           "typewriter 2s steps(11) forwards, blink 1s steps(11) infinite 2s",
-        timeline: "timeline 2s steps(11) forwards",
+        "clip-reveal": "clipReveal 2s steps(11) forwards",
       },
       keyframes: {
+        clipReveal: {
+          "0%": { clipPath: "inset(0 100% 0 0)" },
+          "100%": { clipPath: "inset(0 0 0 0)" },
+        },
         typewriter: {
           to: {
             left: "100%",
@@ -59,26 +66,6 @@ module.exports = {
           },
           "100%": {
             opacity: "0",
-          },
-        },
-        timeline: {
-          "0%": {
-            transform: "scaleY(0)",
-          },
-          "20%": {
-            transform: "scaleY(0.2)",
-          },
-          "40%": {
-            transform: "scaleY(0.4)",
-          },
-          "60%": {
-            transform: "scaleY(0.6)",
-          },
-          "80%": {
-            transform: "scaleY(0.8)",
-          },
-          "100%": {
-            transform: "scaleY(1)",
           },
         },
       },

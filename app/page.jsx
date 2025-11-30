@@ -18,7 +18,7 @@ const Home = () => {
             <p className="text-[30px] xl:text-[50px] my-4">Hello I'm </p>
             <Heading
               text="Dinh Quang Chung"
-              className="relative w-[max-content] before:absolute before:inset-0 before:animate-typewriter before:bg-white after:absolute after:inset-0 after:w-[0.125em] after:animate-caret after:bg-primary"
+              className="relative w-[max-content] before:content-[''] before:absolute before:inset-0 before:animate-typewriter before:bg-white after:content-[''] after:absolute after:inset-0 after:w-[0.125em] after:animate-caret after:bg-primary"
             />
             <div className="max-w-[500px] mb-9 mx-auto xl:mx-0">
               <p>
@@ -46,7 +46,7 @@ const Home = () => {
               <div className="mb-8 xl:mb-0">
                 <Social
                   containerStyles="flex gap-6"
-                  iconStyles="w-9 h-9 border border-primary rounded-full flex justify-center items-center text-primary text-base hover:bg-primary hover:text-white hover:transition-all duration-500"
+                  iconStyles="w-9 h-9 border border-primary rounded-full flex justify-center items-center text-primary text-base hover:bg-primary-gradient hover:text-white hover:transition-all duration-500"
                 />
               </div>
             </div>

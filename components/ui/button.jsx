@@ -9,10 +9,12 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-white hover:bg-white hover:text-primary",
-        primary: "bg-primary text-white",
+        default:
+          "bg-primary-gradient text-white border border-primary hover:bg-transparent-gradient",
+        primary:
+          "bg-primary-gradient text-white border border-primary hover:bg-transparent-gradient ",
         outline:
-          "border border-primary bg-transparent text-primary hover:bg-primary hover:text-white",
+          "border border-primary bg-transparent text-primary hover:bg-primary-gradient hover:text-white",
       },
       size: {
         default: "h-[44px] px-6",

@@ -1,4 +1,4 @@
-import "swiper/css";
+import "swiper/css"; 
 import Hero from "@/components/Hero";
 import MainContent from "@/components/MainContent";
 import Heading from "@/components/Heading";
@@ -12,7 +12,7 @@ export const metadata = {
 const Work = () => {
   return (
     <>
-      <Hero src="/images/work/hero.png" />
+      <Hero src="/images/works/hero.png" />
       <MainContent>
         <Heading text="Works" className="text-center animate-clip-reveal" />
         <WorkSliderClient projects={projects} />

@@ -35,7 +35,7 @@ const WorkSliderClient = ({ projects }) => {
             ))}
           </div>
           <div className="flex items-center gap-4 mt-8">
-            <Link href={project.live}>
+            <Link href={`/works/${project.id}`}>
               <Button asChild variant="outline">
                 <span>Go to Project</span>
               </Button>
